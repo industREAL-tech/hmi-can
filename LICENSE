@@ -1,0 +1,20 @@
+industREAL.HMI.CAN
+Copyright (C) 2026 industREAL.tech Ltd <https://industreal.tech>
+
+This software is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License version 3, as
+published by the Free Software Foundation.
+
+This software is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this software. If not, see <https://www.gnu.org/licenses/>.
+
+The full license texts are provided alongside this file:
+  - COPYING.LESSER   GNU Lesser General Public License v3
+  - COPYING          GNU General Public License v3 (incorporated by the LGPL)
+
+SPDX-License-Identifier: LGPL-3.0-only

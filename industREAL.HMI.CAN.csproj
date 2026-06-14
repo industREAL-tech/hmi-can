@@ -22,4 +22,18 @@
     <ProjectReference Include="..\industREAL.CAN.CORE\industREAL.CAN.CORE.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <Company>industREAL.tech Ltd</Company>
+    <Copyright>Copyright © 2026 industREAL.tech Ltd</Copyright>
+    <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://git.industreal.tech/industreal.hmi/can</RepositoryUrl>
+    <PackageProjectUrl>https://git.industreal.tech/industreal.hmi/can</PackageProjectUrl>
+    <PackageTags>industREAL;HMI;CAN;SocketCAN</PackageTags>
+    <DebugType>embedded</DebugType>
+    <Deterministic>true</Deterministic>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
 </Project>
