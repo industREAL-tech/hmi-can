@@ -27,8 +27,8 @@
     <Copyright>Copyright © 2026 industREAL.tech Ltd</Copyright>
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://git.industreal.tech/industreal.hmi/can</RepositoryUrl>
-    <PackageProjectUrl>https://git.industreal.tech/industreal.hmi/can</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/industREAL-tech/hmi-can</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/industREAL-tech/hmi-can</PackageProjectUrl>
     <PackageTags>industREAL;HMI;CAN;SocketCAN</PackageTags>
     <DebugType>embedded</DebugType>
     <Deterministic>true</Deterministic>
