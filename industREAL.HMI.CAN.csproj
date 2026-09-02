@@ -4,9 +4,10 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
 	  <PackageId>industREAL.HMI.CAN</PackageId>
-	  <Version>0.1.0</Version>
+	  <Version>0.2.0</Version>
 	  <Authors>industREAL</Authors>
 	  <Description>industREAL HMI CAN package</Description>
 	  <IsPackable>true</IsPackable>
@@ -15,11 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Iot.Device.Bindings" Version="4.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\industREAL.CAN.CORE\industREAL.CAN.CORE.csproj" />
+    <ProjectReference Include="..\core\industREAL.CAN.CORE.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
