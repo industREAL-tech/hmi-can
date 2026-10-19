@@ -116,6 +116,12 @@ namespace industREAL.HMI.CAN
 
         // -------- Loops --------
 
+        // A bus that is down (bus-off, a cable out) fails every write -- one line per frame
+        // was 266 identical lines in 34 s for a cyclic 15 ms command. The first failure is
+        // logged, the rest are counted, and one line says when writes went through again.
+        private int _failedWrites;
+        private DateTime _firstFailure;
+
         private async Task WriteLoopAsync(CancellationToken token)
         {
             while (!token.IsCancellationRequested)
@@ -132,10 +138,26 @@ namespace industREAL.HMI.CAN
                         if ((f._flags & CanFlags.FdCanFormat) != 0) fdFlags |= LinuxCanFdSocket.CANFD_FDF;
                         if ((f._flags & CanFlags.BrsOn)       != 0) fdFlags |= LinuxCanFdSocket.CANFD_BRS;
                         _socket.Write(id, new ReadOnlySpan<byte>(f._data, 0, (byte)f._dataLength), fdFlags);
+                        if (_failedWrites > 0)
+                        {
+                            Log.Info("CAN writes go through again, after {0} failed in {1:0.0} s.",
+                                     _failedWrites, (DateTime.UtcNow - _firstFailure).TotalSeconds);
+                            _failedWrites = 0;
+                        }
                     }
-                    catch (Exception ex) { Log.Error(ex, "CAN write failed for ID 0x{0:X}.", f._canID); }
+                    catch (Exception ex)
+                    {
+                        if (_failedWrites++ == 0)
+                        {
+                            _firstFailure = DateTime.UtcNow;
+                            Log.Error(ex, "CAN write failed for ID 0x{0:X}; further failures are counted until writes go through again.", f._canID);
+                        }
+                    }
                 }
             }
+            if (_failedWrites > 0)
+                Log.Warn("CAN writer stopping with {0} write(s) failed in the last {1:0.0} s.",
+                         _failedWrites, (DateTime.UtcNow - _firstFailure).TotalSeconds);
             Log.Debug("Writer loop exiting.");
         }
 
