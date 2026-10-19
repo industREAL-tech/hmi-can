@@ -7,7 +7,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
 	  <PackageId>industREAL.HMI.CAN</PackageId>
-	  <Version>0.2.0</Version>
+	  <Version>0.2.1</Version>
 	  <Authors>industREAL</Authors>
 	  <Description>industREAL HMI CAN package</Description>
 	  <IsPackable>true</IsPackable>
